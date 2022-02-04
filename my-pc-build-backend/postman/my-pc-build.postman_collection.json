@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "fb78bf53-66d9-444b-a54f-2062320f65ca",
+		"name": "my-pc-build",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cpu",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/cpu",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCpu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/cpu/4",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpu",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCpu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Intel i5 12400F\",\r\n    \"clock\": 3.6,\r\n    \"cores\": 6,\r\n    \"threads\": 12,\r\n    \"price\": 1199\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/cpu/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpu",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCpu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/cpu/delete?id=4",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpu",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Psu",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/psu",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"psu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPsu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/psu/6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"psu",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPsu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Corsair CV450\",\r\n    \"wattage\": 450,\r\n    \"price\": 249.90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/psu/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"psu",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePsu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/cpu/delete?id=4",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpu",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
