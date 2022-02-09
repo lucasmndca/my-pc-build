@@ -14,7 +14,31 @@ export class CpusComponent implements OnInit {
   constructor(private service: CpuService) { }
 
   ngOnInit(): void {
+    this.updateCpuList();
+  }
+
+  saveCpu(newCpu: Cpu): void {
+    this.service
+      .save(newCpu)
+      .subscribe({
+        next: (msg) => console.log(msg),
+        error: (e) => console.error(e),
+        complete: () => this.updateCpuList()
+      });
+  }
+
+  updateCpuList(): void {
     this.cpuList = this.service.getAll();
+  }
+
+  deleteCpu(id: number): void {
+    this.service
+      .delete(id)
+      .subscribe({
+        next: (msg) => console.log(msg),
+        error: (e) => console.error(e),
+        complete: () => this.updateCpuList()
+      });
   }
 
 }

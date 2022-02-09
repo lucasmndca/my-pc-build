@@ -1,28 +1,4 @@
 <div class="content">
-    <h1>Gerenciar CPUs</h1>
-    <p>Esta é a sua lista de CPUs. Você pode adicionar um novo ou remover unidades.</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Clock</th>
-                <th>Núcleos</th>
-                <th>Threads</th>
-                <th>Preço</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cpu of cpuList | async">
-                <td>{{ cpu.id }}</td>
-                <td>{{ cpu.name }}</td>
-                <td>{{ cpu.clock }} GHz</td>
-                <td>{{ cpu.cores }}</td>
-                <td>{{ cpu.threads }}</td>
-                <td>R$ {{ cpu.price }}</td>
-                <td><button class="button">Deletar</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <app-add-cpu (saved)="saveCpu($event)"></app-add-cpu>
+    <app-manage-cpu [cpuList]="cpuList" (deleteEvent)="deleteCpu($event)"></app-manage-cpu>
 </div>

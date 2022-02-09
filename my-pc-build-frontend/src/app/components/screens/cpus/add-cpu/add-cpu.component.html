@@ -1,0 +1,67 @@
+<h1>Adicionar CPU</h1>
+<p>Insira os dados da nova CPU abaixo e clique em "salvar" para salvar.</p>
+<div class="columns">
+    <div class="column">
+        <div class="field">
+            <label class="label">Nome</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Nome da CPU" [(ngModel)]="newCpu.name">
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="field">
+            <label class="label">Preço</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Preço da CPU" min="1" max="15000" [(ngModel)]="newCpu.price">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <div class="field">
+            <label class="label">Clock</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Clock da CPU" min="0" max="9.9" [(ngModel)]="newCpu.clock">
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <label class="label">Núcleos</label>
+        <div class="select">
+            <select [(ngModel)]="newCpu.cores">
+                <option selected disabled>Selecione</option>
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+                <option>6</option>
+                <option>8</option>
+                <option>10</option>
+                <option>12</option>
+                <option>16</option>
+                <option>20</option>
+                <option>24 ou mais </option>
+            </select>
+        </div>
+    </div>
+    <div class="column">
+        <label class="label">Threads</label>
+        <div class="select">
+            <select [(ngModel)]="newCpu.threads">
+                <option selected disabled>Selecione</option>
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+                <option>6</option>
+                <option>8</option>
+                <option>10</option>
+                <option>12</option>
+                <option>16</option>
+                <option>20</option>
+                <option value="24">24 ou mais </option>
+            </select>
+        </div>
+    </div>
+</div>
+<button class="button is-primary" (click)="saveCpu()">Salvar</button>
