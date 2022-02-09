@@ -1,0 +1,37 @@
+<div class="manage-cpus">
+    <h1>Gerenciar CPUs</h1>
+    <p>Esta é a sua lista de CPUs. Você pode adicionar um novo ou remover unidades.</p>
+
+    <div *ngIf="(cpuList | async)?.length === 0">
+        <strong>Ainda não há CPUs cadastrados.</strong>
+    </div>
+
+    <table class="table" *ngIf="(cpuList | async)?.length !== 0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Clock</th>
+                <th>Núcleos</th>
+                <th>Threads</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cpu of cpuList | async">
+                <td>{{ cpu.id }}</td>
+                <td>{{ cpu.name }}</td>
+                <td>{{ cpu.clock }} GHz</td>
+                <td>{{ cpu.cores }}</td>
+                <td>{{ cpu.threads }}</td>
+                <td>{{ cpu.price | currency: 'BRL'}}</td>
+                <td><button class="button" (click)="emitCpuDeleteEvent(cpu.id)">Deletar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #loading>
+        <p>Nenhum Cpu</p>
+    </ng-template>
+</div>

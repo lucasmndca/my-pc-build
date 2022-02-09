@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
@@ -10,6 +11,8 @@ import { MyBuildsComponent } from './components/screens/my-builds/my-builds.comp
 import { CpusComponent } from './components/screens/cpus/cpus.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PsusComponent } from './components/screens/psus/psus.component';
+import { AddCpuComponent } from './components/screens/cpus/add-cpu/add-cpu.component';
+import { ManageCpuComponent } from './components/screens/cpus/manage-cpu/manage-cpu.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { PsusComponent } from './components/screens/psus/psus.component';
     NewBuildComponent,
     MyBuildsComponent,
     CpusComponent,
-    PsusComponent
+    PsusComponent,
+    AddCpuComponent,
+    ManageCpuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
